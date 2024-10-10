@@ -238,7 +238,7 @@ figure,ol,p,ul{
 a img{border:0}
 sub,sup{line-height:0}
 #particles-js{
-    background:#1a222c;
+    background: linear-gradient(#570225,#f46b49);
     display:flex;
     vertical-align:bottom;
     width:100%;
@@ -390,9 +390,17 @@ sub,sup{line-height:0}
         flex-wrap:nowrap;font-size:75px
     }}
 
-.user-details{
+.avatar, .user-details{
     text-align:center;
     margin:5px auto
+}
+
+.avatar{
+    margin:10px auto
+}
+
+.avatar img{
+    max-width:200px;max-height:200px;border-radius:50%
 }
 
 #projects{
