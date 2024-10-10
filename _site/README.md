@@ -1,6 +1,4 @@
-# Particle Jekyll Theme
-
-![](./particle.jpg)
+# Portfolio page using Jekyll Theme  
 
 This is a simple and minimalist template for Jekyll designed for developers that want to show of their portfolio.
 
