@@ -9,22 +9,42 @@
 
 .tech {
   margin: 10px;
-  width: 30%
+  width: 30%; // This is for desktop layout
+
+  // For mobile: Set the width to 100% to take up the full screen
+  @media only screen and (max-width: 768px) {
+    width: 100%;  // Full width on smaller screens
+  }
 }
 
 .user {
   text-align: center;
   font-size: 60px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; // Stays in row layout on larger screens
   flex-wrap: wrap;
   justify-content: space-between;
+
   p {
     font-size: 16px;
   }
+
+  // Mobile-first approach, stack vertically on smaller screens
+  @media only screen and (max-width: 768px) {
+    flex-direction: column; // Stack divs vertically on small screens
+    align-items: center; // Center the tech divs
+    width: 100%; 
+  }
+
+  // Desktop layout: when the screen is wider than the cutoff point
   @media only screen and (min-width: $cut) {
+    flex-direction: row; // Keep divs in row on larger screens
     flex-wrap: nowrap;
     font-size: 75px;
+
+    .tech {
+      width: 30%; // Keep 30% width for desktop screens
+    }
   }
 }
 
