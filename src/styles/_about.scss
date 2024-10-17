@@ -9,6 +9,7 @@
 
 .tech {
   margin: 10px;
+  width: 30%
 }
 
 .user {
@@ -27,7 +28,15 @@
   }
 }
 
-.user-details {
-  text-align: center;
-  margin: 5px auto;
+.avatar, .user-details{
+  text-align:center;
+  margin:5px auto
+}
+
+.avatar{
+  margin:10px auto
+}
+
+.avatar img{
+  max-width:200px;max-height:200px;border-radius:50%
 }
