@@ -21,7 +21,7 @@
     margin: 0;
   }
   li {
-    color: $main;
+    color: #333;
     font-size: 1.1rem;
   }
   p {
@@ -70,9 +70,9 @@
 .project-link{
   display:inline-block;
   margin:10px 0;
-  padding:5px;
-  color:#570225;
-  background-color:transparent;
+  padding:10px;
+  color:#fff;
+  background-color:#570225;
   border:1px solid #570225;
   border-radius:10px;
   text-align:center;
