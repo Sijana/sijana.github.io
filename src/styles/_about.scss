@@ -62,3 +62,107 @@
 .avatar img{
   max-width:200px;max-height:200px;border-radius:50%
 }
+
+.interactive-card {
+  background-color: #570225;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px #570225, 0 2px 4px -1px #570225;
+  cursor: pointer;
+  height: 250px;
+  overflow: hidden;
+  perspective: 1000px;
+  position: relative;
+  transition: transform 0.5s;
+  width: 100%;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  display: flex;  /* Add flexbox to center content */
+  align-items: center;  /* Center vertically */
+  justify-content: center;  /* Center horizontally */
+}
+
+.card-title, .card-content {
+  backface-visibility: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 3rem; 
+  position: absolute; 
+  text-align: center; 
+  width: 90%; 
+  height: 90%;
+  color: #fff; /* Ensure text color is white for both */
+}
+
+.interactive-card:hover,
+.interactive-card:hover .card-title {
+  transform: scale(1.05);
+  background-color: #f46b49;
+}
+
+.flipped .card-inner {
+  transform: rotateY(180deg);
+  background-color: #570225;
+}
+
+.flipped .interactive-card {
+  background-color: #570225;
+  transform: rotateY(180deg);
+}
+
+.card-title {
+  background-color: #570225;
+  transform: rotateY(0deg);
+}
+
+.card-title:hover {
+  background-color: #f46b49;
+}
+
+.card-content {
+  background-color: #570225;
+  transform: rotateY(180deg);
+}
+
+/* Ensure text color is white for both flipped and non-flipped states */
+.flipped .card-title, .flipped .card-content {
+  color: #fff;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px;
+  // border: 1px solid #ccc;
+  margin-top: 5px;
+}
+.dropdown-title {
+  cursor: pointer;
+  padding: 10px;
+  // background-color: #f2f2f2;
+  // border: 1px solid #ccc;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-title::before {
+  content: '\25B6'; /* Unicode for right-pointing triangle */
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  color: #570225;
+}
+
+.dropdown-title.active::before {
+  transform: rotate(90deg); /* Rotate triangle to point down */
+  color: #570225;
+}
+
+.dropdown-title:hover::before {
+  color: #f46b49;
+}

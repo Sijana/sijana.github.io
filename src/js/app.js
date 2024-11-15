@@ -1,8 +1,17 @@
-/* sweetScroll load */
 document.addEventListener("DOMContentLoaded", function () {
+  // Set the height of #particles-js based on the current page
+  const particlesJsElement = document.getElementById('particles-js');
+
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    particlesJsElement.style.height = '100vh';
+  } else {
+    particlesJsElement.style.height = '50vh';
+  }
+
+  // Initialize SweetScroll
   new SweetScroll({/* some options */});
 
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  // Initialize particlesJS
   particlesJS('particles-js', {
     "particles": {
       "number": {
@@ -114,5 +123,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     "retina_detect": true
   });
-
 }, false);
+
+
+document.querySelectorAll('.interactive-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('hover');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('hover');
+  });
+});
+
+document.querySelectorAll('.dropdown-title').forEach(title => {
+  title.addEventListener('click', () => {
+      const content = title.nextElementSibling;
+      if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'block';
+          title.classList.add('active');
+      } else {
+          content.style.display = 'none';
+          title.classList.remove('active');
+      }
+  });
+});
